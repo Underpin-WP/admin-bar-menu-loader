@@ -6,7 +6,7 @@ Loader That assists with adding admin bars menus to a WordPress website.
 
 ### Using Composer
 
-`composer require underpin/loaders/admin-bar-menus`
+`composer require underpin/loaders--admin-bar-menus`
 
 ### Manually
 
