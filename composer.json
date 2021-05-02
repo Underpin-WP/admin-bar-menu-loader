@@ -1,5 +1,5 @@
 {
-  "name": "underpin/loaders--admin-bar-menus",
+  "name": "underpin/admin-bar-menu-loader",
   "description": "Admin Menu Bar Loader for Underpin",
   "type": "library",
   "license": "GPL 2.0",
