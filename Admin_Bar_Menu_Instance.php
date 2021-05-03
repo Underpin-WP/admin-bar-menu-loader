@@ -10,6 +10,7 @@
 namespace Underpin_Admin_Bar_Menu\Factories;
 
 
+use Underpin\Traits\Instance_Setter;
 use Underpin_Admin_Bar_Menu\Abstracts\Admin_Bar_Menu;
 use WP_Admin_Bar;
 use WP_User;
@@ -27,6 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @package Underpin\Abstracts
  */
 class Admin_Bar_Menu_Instance extends Admin_Bar_Menu {
+	use Instance_Setter;
 
 	/**
 	 * The children of this admin bar menu.
@@ -79,12 +81,7 @@ class Admin_Bar_Menu_Instance extends Admin_Bar_Menu {
 	 * @param array  $args    Array of args to create this menu.
 	 */
 	public function __construct( $item_id, $args = [] ) {
-		foreach ( $args as $arg => $value ) {
-			if ( isset( $this->$arg ) ) {
-				$this->$arg = $value;
-				unset( $args[ $arg ] );
-			}
-		}
+		$this->set_values( $args );
 		parent::__construct( $item_id, $args );
 	}
 
