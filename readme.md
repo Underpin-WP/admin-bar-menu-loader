@@ -17,7 +17,7 @@ Underpin, it should work as-expected.
 
 ## Setup
 
-1. Install Underpin. See [Underpin Docs](https://www.github.com/underpin/underpin)
+1. Install Underpin. See [Underpin Docs](https://www.github.com/underpin-wp/underpin)
 1. Register new admin menus as-needed.
 
 ## Admin Menu Example
@@ -25,12 +25,15 @@ Underpin, it should work as-expected.
 A very basic example could look something like this.
 
 ```php
-underpin()->admin_bar_menus()->add('menu_bar_key',[
-  'class' => 'Admin_Bar_Menu_Instance',
-  'args'  => [
-    'test-id',
-  ]
-]);
+\Underpin\underpin()->admin_bar_menus()->add( 'menu_bar_key', [
+	'children'    => [],
+	'capability'  => 'administrator',
+	'id'          => 'menu_bar_id', // Required
+	'args'        => [ /* See WP_Admin_Bar::add_menu */ ],
+	'position'    => 200,
+	'name'        => 'Menu Bar',
+	'description' => 'A menu bar example',
+] );
 ```
 
 Alternatively, you can extend `Admin_Bar_Menu` and reference the extended class directly, like so:
