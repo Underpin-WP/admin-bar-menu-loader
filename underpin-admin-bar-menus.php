@@ -4,10 +4,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Add this loader.
-add_action( 'underpin/before_setup', function ( $instance ) {
+add_action( 'underpin/before_setup', function ( $file ) {
 	require_once( plugin_dir_path( __FILE__ ) . 'Admin_Bar_Menu.php' );
 	require_once( plugin_dir_path( __FILE__ ) . 'Admin_Bar_Menu_Instance.php' );
-	$instance->loaders()->add( 'admin_bar_menus', [
+	Underpin\underpin()->get( $file )->loaders()->add( 'admin_bar_menus', [
 		'instance' => 'Underpin_Admin_Bar_Menu\Abstracts\Admin_Bar_Menu',
 		'default'  => 'Underpin_Admin_Bar_Menu\Factories\Admin_Bar_Menu_Instance',
 	] );
