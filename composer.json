@@ -10,12 +10,12 @@
     }
   ],
   "require": {
-    "underpin/underpin": ">=1.2",
-    "underpin/logger-loader": "^1.0"
+    "underpin/underpin": "^2.0"
   },
   "autoload": {
+    "psr-4": {"Underpin\\Admin_Bar_Menu\\":  "lib/"},
     "files": [
-      "underpin-admin-bar-menus.php"
+      "bootstrap.php"
     ]
   }
 }
