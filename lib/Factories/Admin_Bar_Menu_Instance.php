@@ -7,14 +7,11 @@
  */
 
 
-namespace Underpin_Admin_Bar_Menu\Factories;
+namespace Underpin\Admin_Bar_Menu\Factories;
 
 
 use Underpin\Traits\Instance_Setter;
-use Underpin_Admin_Bar_Menu\Abstracts\Admin_Bar_Menu;
-use WP_Admin_Bar;
-use WP_User;
-use function Underpin\underpin;
+use Underpin\Admin_Bar_Menu\Abstracts\Admin_Bar_Menu;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

@@ -7,13 +7,13 @@
  */
 
 
-namespace Underpin_Admin_Bar_Menu\Abstracts;
+namespace Underpin\Admin_Bar_Menu\Abstracts;
 
 
+use Underpin\Loaders\Logger;
 use Underpin\Traits\Feature_Extension;
 use WP_Admin_Bar;
 use WP_User;
-use function Underpin\underpin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -128,7 +128,7 @@ use Feature_Extension;
 			$args       = $this->args;
 			$args['id'] = $this->id;
 
-			underpin()->logger()->log(
+			Logger::log(
 				'notice',
 				'child_menu_added',
 				'An admin bar menu item, ' . $this->id . ' was added'
@@ -142,14 +142,14 @@ use Feature_Extension;
 
 				$admin_bar->add_menu( $child );
 
-				underpin()->logger()->log(
+				Logger::log(
 					'notice',
 					'child_menu_added',
 					'A child menu item, ' . $id . ' was added to the ' . $this->name . ' admin bar menu.'
 				);
 			}
 		} else {
-			underpin()->logger()->log(
+			Logger::log(
 				'warning',
 				'user_cannot_view_menu',
 				'The specified user cannot view the ' . $this->name . ' menu. It will not be displayed.',
